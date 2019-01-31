@@ -21,6 +21,16 @@ public class recursion{
     }
   }
 
+  /*Recursively find the n'th fibbonaci number in linear time
+     *fib(0) = 1; fib(1) = 1; fib(5) = 5
+     *precondition: n is non-negative
+     */
+    public static int fib(int n){
+      if (n < 2){
+        return 1;
+      }
+    }
+
   public static void main(String[] args){
     System.out.println(sqrt(4, 0.00001));
     System.out.println(sqrt(0.000000003, 0.00001));
