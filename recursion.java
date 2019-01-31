@@ -29,12 +29,11 @@ public class recursion{
     return fibHelp(n, 1, 1);
   }
 
-  private static int fibHelp(int n, int curr, int pprev){
+  private static int fibHelp(int n, int curr, int prev){
     if (n < 3) {
       return curr;
     } else {
-      //System.out.println(
-      return fibHelp(n-1, pprev + curr, curr);
+      return fibHelp(n-1, prev + curr, curr);
     }
   }
 
