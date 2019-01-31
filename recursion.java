@@ -26,26 +26,27 @@ public class recursion{
      *precondition: n is non-negative
      */
   public static int fib(int n){
-    if (n < 2) {
-      return 1;
-    }
     return fibHelp(n, 1, 1);
   }
 
-  private static int fibHelp(int n, int prev, int pprev){
-    if (n == 0){
-      return prev + pprev;
+  private static int fibHelp(int n, int curr, int pprev){
+    if (n < 3) {
+      return curr;
     } else {
-      return fibHelp(n-1, pprev, prev+pprev);
+      //System.out.println(
+      return fibHelp(n-1, pprev + curr, curr);
     }
   }
 
   public static void main(String[] args){
-    System.out.println(sqrt(4, 0.00001));
+    /*System.out.println(sqrt(4, 0.00001));
     System.out.println(sqrt(0.000000003, 0.00001));
     System.out.println(sqrt(4808788, 0.00001));
     System.out.println(sqrt(24, 0.00001));
     System.out.println(sqrt(12345.64, 0.00001));
-    System.out.println(sqrt(0, 0.00001));
+    System.out.println(sqrt(0, 0.00001));*/
+    System.out.println(fib(0));
+    System.out.println(fib(1));
+    System.out.println(fib(2));
   }
 }
