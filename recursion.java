@@ -26,14 +26,17 @@ public class recursion{
      *precondition: n is non-negative
      */
   public static int fib(int n){
-    return fibHelp(n, 0);
+    if (n < 2) {
+      return 1;
+    }
+    return fibHelp(n, 1, 1);
   }
 
-  private static int fibHelp(int n, int start){
-    if (n < 2){
-      return 1;
+  private static int fibHelp(int n, int prev, int pprev){
+    if (n == 0){
+      return prev + pprev;
     } else {
-      return 0;
+      return fibHelp(n-1,);
     }
   }
 
