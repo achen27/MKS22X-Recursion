@@ -36,7 +36,7 @@ public class recursion{
     if (n == 0){
       return prev + pprev;
     } else {
-      return fibHelp(n-1,);
+      return fibHelp(n-1, pprev, prev+pprev);
     }
   }
 
