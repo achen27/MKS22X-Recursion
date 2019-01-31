@@ -1,13 +1,19 @@
 public class recursion{
-  public static double sqrt(double n){
+
+  /*Recursively find the sqrt using Newton's approximation
+     *tolerance is the allowed percent error the squared answer is away from n.
+     *precondition: n is non-negative
+
+    */
+  public static double sqrt(double n, double tolerance){
     if (n == 0){
       return 0;
     }
-    return rootHelp(n, 1);
+    return rootHelp(n, 0.00001, 1);
   }
 
-  public static double rootHelp(double n, double guess){
-    if (Math.abs(guess*guess - n) < n * 0.00001){
+  private static double rootHelp(double n, double tolerance, double guess){
+    if (Math.abs(guess*guess - n) < n * tolerance){
       return guess;
     } else {
       guess = (n /guess + guess) / 2;
