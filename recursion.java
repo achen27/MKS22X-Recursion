@@ -46,6 +46,9 @@ public class recursion{
     System.out.println(sqrt(0, 0.00001));*/
     System.out.println(fib(0));
     System.out.println(fib(1));
+    System.out.println(fib(2));
+    System.out.println(fib(3));
     System.out.println(fib(5));
+    System.out.println(fib(60));
   }
 }
