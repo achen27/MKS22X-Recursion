@@ -26,11 +26,11 @@ public class recursion{
      *precondition: n is non-negative
      */
   public static int fib(int n){
-    return fibHelp(n, 1, 1);
+    return fibHelp(n, 1, 0);
   }
 
   private static int fibHelp(int n, int curr, int prev){
-    if (n < 3) {
+    if (n < 2) {
       return curr;
     } else {
       return fibHelp(n-1, prev + curr, curr);
@@ -46,6 +46,6 @@ public class recursion{
     System.out.println(sqrt(0, 0.00001));*/
     System.out.println(fib(0));
     System.out.println(fib(1));
-    System.out.println(fib(2));
+    System.out.println(fib(5));
   }
 }
