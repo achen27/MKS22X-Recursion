@@ -25,11 +25,17 @@ public class recursion{
      *fib(0) = 1; fib(1) = 1; fib(5) = 5
      *precondition: n is non-negative
      */
-    public static int fib(int n){
-      if (n < 2){
-        return 1;
-      }
+  public static int fib(int n){
+    return fibHelp(n, 0);
+  }
+
+  private static int fibHelp(int n, int start){
+    if (n < 2){
+      return 1;
+    } else {
+      return 0;
     }
+  }
 
   public static void main(String[] args){
     System.out.println(sqrt(4, 0.00001));
