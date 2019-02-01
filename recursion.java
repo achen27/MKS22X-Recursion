@@ -37,13 +37,20 @@ public class recursion{
     }
   }
 
-  public static ArrayList<Integer> makeAllSums(int n){
-    return allSumsHelp(n, 0, new ArrayList<Integer>());
-  }
+  /*public static ArrayList<Integer> makeAllSums(int n){
+    return allSumsHelp(n, 0);
+  }*/
 
-  public static ArrayList<Integer> allSumsHelp(int n, int sum, ArrayList<Integer> a){
+  public static int allSumsHelp(int n, int sum, boolean b){
     if (n == 0){
-      a.add(sum);
+      System.out.println(sum);
+      return sum;
+    } else{
+      if (b){
+        return allSumsHelp(n, sum + n, false);
+      } else {
+        return allSumsHelp(n-1, sum, true);
+      }
     }
   }
 
@@ -53,12 +60,13 @@ public class recursion{
     System.out.println(sqrt(4808788, 0.00001));
     System.out.println(sqrt(24, 0.00001));
     System.out.println(sqrt(12345.64, 0.00001));
-    System.out.println(sqrt(0, 0.00001));*/
+    System.out.println(sqrt(0, 0.00001));
     System.out.println(fib(0));
     System.out.println(fib(1));
     System.out.println(fib(2));
     System.out.println(fib(3));
     System.out.println(fib(5));
-    System.out.println(fib(60));
+    System.out.println(fib(60));*/
+    System.out.println(allSumsHelp(3, 0));
   }
 }
