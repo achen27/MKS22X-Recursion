@@ -41,15 +41,15 @@ public class recursion{
     return allSumsHelp(n, 0);
   }*/
 
-  public static int allSumsHelp(int n, int sum, boolean add){
-    if (n == 0){
+  public static int allSumsHelp(int n, int sum){
+    if (sum == 0){
       System.out.println(sum);
       return sum;
     } else{
-      if (add){
-        return allSumsHelp(n, sum + n, false);
+      if (true){
+        return allSumsHelp(n-1, sum + n);
       } else {
-        return allSumsHelp(n-1, sum, true);
+        return allSumsHelp(n-1, sum);
       }
     }
   }
