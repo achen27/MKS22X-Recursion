@@ -43,20 +43,14 @@ public class recursion{
     return allSumsHelp(n, 0);
   }*/
 
-  public static ArrayList<Integer> allSumsHelp(int n, int sum, boolean add, ArrayList<Integer> a){
-    if (sum == 0 && !add){
+  public static int allSumsHelp(int n, int sum, ArrayList<Integer> a){
+    /*if (sum == 0 && !add){
       return a;
-    }
+    }*/
     if (n == 0){
-      System.out.println(sum);
-      a.add(sum);
-      //return allSumsHelp();
+      return 0;
     }else{
-      if (add){
-        return allSumsHelp(n-1, sum + n, true, a);
-      } else {
-        return allSumsHelp(n-1, sum, true, a);
-      }
+      return allSumsHelp(n-1, sum + n, a);
     }
   }
 
