@@ -37,6 +37,16 @@ public class recursion{
     }
   }
 
+  public static ArrayList<Integer> makeAllSums(int n){
+    return allSumsHelp(n, 0, new ArrayList<Integer>());
+  }
+
+  public static ArrayList<Integer> allSumsHelp(int n, int sum, ArrayList<Integer> a){
+    if (n == 0){
+      a.add(sum);
+    }
+  }
+
   public static void main(String[] args){
     /*System.out.println(sqrt(4, 0.00001));
     System.out.println(sqrt(0.000000003, 0.00001));
