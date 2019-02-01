@@ -39,16 +39,18 @@ public class recursion{
     }
   }
 
-  /*public static ArrayList<Integer> makeAllSums(int n){
-    return allSumsHelp(n, 0);
-  }*/
+  public static ArrayList<Integer> makeAllSums(int n){
+    ArrayList<Integer> sumList = new ArrayList<Integer>();
+    allSumsHelp(n, 0, 0, sumList);
+    return sumList;
+  }
 
-  public static void allSumsHelp(int n, int sum, int index, ArrayList<Integer> a){
+  public static void allSumsHelp(int n, int sum, int index, ArrayList<Integer> sumList){
     if (n == 0){
-      a.add(sum);
+      sumList.add(sum);
     }else{
-      allSumsHelp(n-1, sum+n, index+1, a);
-      allSumsHelp(n-1, sum, index+1, a);
+      allSumsHelp(n-1, sum+n, index+1, sumList);
+      allSumsHelp(n-1, sum, index+1, sumList);
     }
   }
 
