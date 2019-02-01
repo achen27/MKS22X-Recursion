@@ -68,6 +68,10 @@ public class recursion{
     System.out.println(fib(3));
     System.out.println(fib(5));
     System.out.println(fib(60));*/
-    System.out.println(makeAllSums(3));
+    //System.out.println(makeAllSums(0));
+    //System.out.println(makeAllSums(1));
+    //System.out.println(makeAllSums(2));
+    //System.out.println(makeAllSums(3));
+    System.out.println(makeAllSums(7));
   }
 }
