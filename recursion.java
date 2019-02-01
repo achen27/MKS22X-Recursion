@@ -41,12 +41,12 @@ public class recursion{
     return allSumsHelp(n, 0);
   }*/
 
-  public static int allSumsHelp(int n, int sum, boolean b){
+  public static int allSumsHelp(int n, int sum, boolean add){
     if (n == 0){
       System.out.println(sum);
       return sum;
     } else{
-      if (b){
+      if (add){
         return allSumsHelp(n, sum + n, false);
       } else {
         return allSumsHelp(n-1, sum, true);
@@ -67,6 +67,6 @@ public class recursion{
     System.out.println(fib(3));
     System.out.println(fib(5));
     System.out.println(fib(60));*/
-    System.out.println(allSumsHelp(3, 0));
+    System.out.println(allSumsHelp(2, 0, true));
   }
 }
