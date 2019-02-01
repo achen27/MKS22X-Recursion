@@ -47,6 +47,7 @@ public class recursion{
 
   public static void allSumsHelp(int n, int sum, int index, ArrayList<Integer> sumList){
     if (n == 0){
+      System.out.println(sum);
       sumList.add(sum);
     }else{
       allSumsHelp(n-1, sum+n, index+1, sumList);
@@ -67,6 +68,6 @@ public class recursion{
     System.out.println(fib(3));
     System.out.println(fib(5));
     System.out.println(fib(60));*/
-    //System.out.println(allSumsHelp(2, 0, true));
+    System.out.println(makeAllSums(3));
   }
 }
