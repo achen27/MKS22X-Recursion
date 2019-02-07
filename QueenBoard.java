@@ -11,4 +11,18 @@ public class QueenBoard{
     }
   }
 
+  private boolean addQueen(int r, int c){
+    if (board[r][c] != 0){
+      return false;
+    } else {
+      board[r][c] = -1;
+      //horizontal Xs
+      for (int i = c; i < board.length; i++){
+        board[r][i] += 1;
+      }
+      //diagonal up
+      return true;
+    }
+  }
+
 }
