@@ -11,7 +11,7 @@ public class QueenBoard{
     }
   }
 
-  public boolean addQueen(int r, int c){
+  private boolean addQueen(int r, int c){
     if (board[r][c] != 0){
       return false;
     } else {
@@ -32,7 +32,7 @@ public class QueenBoard{
     }
   }
 
-  public boolean removeQueen(int r, int c){
+  private boolean removeQueen(int r, int c){
     if (board[r][c] != -1){
       return false;
     } else {
@@ -54,7 +54,7 @@ public class QueenBoard{
   }
 
   //prints out numbers
-  public String debugString(){
+  private String debugString(){
     String s = "";
     for (int i = 0; i < board.length; i++){
       for (int j = 0; j < board.length; j++){
@@ -67,6 +67,49 @@ public class QueenBoard{
       s += "\n";
     }
     return s;
+  }
+
+  /**
+  *@return The output string formatted as follows:
+  *All numbers that represent queens are replaced with 'Q'
+  *all others are displayed as underscores '_'
+  *There are spaces between each symbol:
+  *"""_ _ Q _
+  *Q _ _ _
+  *_ _ _ Q
+  *_ Q _ _"""
+  *(pythonic string notation for clarity,
+  *excludes the character up to the *)
+  */
+  public String toString(){
+    String s = "";
+    for (int i = 0; i < board.length; i++){
+      for (int j = 0; j < board.length; j++){
+        if (board[i][j] == -1){
+          s += "Q ";
+        } else {
+          s += "_ ";
+        }
+      }
+      s += "\n";
+    }
+    return s;
+  }
+
+  public static void main(String[] args){
+
+    QueenBoard b = new QueenBoard(4);
+    System.out.println(b.debugString());
+
+    b.addQueen(0,0);
+    System.out.println(b.debugString());
+
+    b.addQueen(2,1);
+    System.out.println(b.debugString());
+
+    b.removeQueen(0,0);
+    System.out.println(b.debugString());
+
   }
 
 }
