@@ -20,7 +20,7 @@ public class QueenBoard{
         board[r][i]++;
       }
       //diagonal up
-      for (int i = 0; i < r+1; i++){
+      for (int i = 0; r-i >= 0 && c+i < board.length; i++){
         board[r-i][c+i]++;
       }
       //diagonal down
