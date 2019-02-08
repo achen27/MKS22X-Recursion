@@ -17,10 +17,13 @@ public class QueenBoard{
     } else {
       board[r][c] = -1;
       //horizontal Xs
-      for (int i = c; i < board.length; i++){
-        board[r][i] += 1;
+      for (int i = c+1; i < board.length; i++){
+        board[r][i]++;
       }
       //diagonal up
+      for (int i = 0; i < r+1; i++){
+        board[r+i][c+i]++;
+      }
       return true;
     }
   }
