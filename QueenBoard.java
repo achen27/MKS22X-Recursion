@@ -120,8 +120,12 @@ public class QueenBoard{
     if (c == 0 && r >= board.length){
       return false;
     }
-    for (int i = 0; board[r+i][c] == 0; i++){
-      addQueen(r+1,c);
+    System.out.println("r: "+r);
+    System.out.println("c: "+c);
+    for (int i = 0; i < board.length; i++){
+      if (board[r+i][c] == 0) {
+        addQueen(r+1,c);
+      }
       return solveHelp(r,c+1);
     }
     return solveHelp(r+1,c-1);
