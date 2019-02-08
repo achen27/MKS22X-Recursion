@@ -96,19 +96,38 @@ public class QueenBoard{
     return s;
   }
 
+  /**
+  *@return false when the board is not solveable and leaves the board filled with zeros;
+  *        true when the board is solveable, and leaves the board in a solved state
+  *@throws IllegalStateException when the board starts with any non-zero value
+  */
+  public boolean solve(){
+    for (int i = 0; i < board.length; i++){
+      for (int j = 0; j < board.length; j++){
+        if (board[i][j] != 0){
+          throw new IllegalStateException("Board is not empty");
+        }
+      }
+    }
+  }
+
   public static void main(String[] args){
 
     QueenBoard b = new QueenBoard(4);
     System.out.println(b.debugString());
+    System.out.println(b);
 
     b.addQueen(0,0);
     System.out.println(b.debugString());
+    System.out.println(b);
 
     b.addQueen(2,1);
     System.out.println(b.debugString());
+    System.out.println(b);
 
     b.removeQueen(0,0);
     System.out.println(b.debugString());
+    System.out.println(b);
 
   }
 
