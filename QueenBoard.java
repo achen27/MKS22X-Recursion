@@ -114,7 +114,7 @@ public class QueenBoard{
   }
 
   private boolean solveHelp(int r, int c){
-    if (c == board.length - 1){
+    if (c >= board.length){
       return true;
     }
     if (r >= board.length){
