@@ -25,11 +25,22 @@ public class QueenBoard{
         board[r-i][c+i]++;
       }
       //diagonal down
-      for (int i = 0; i < c+1; i++){
+      for (int i = 0; i < r+1; i++){
         board[r+i][c+i]++;
       }
       return true;
     }
+  }
+
+  public String debugString(){
+    String s = "";
+    for (int i = 0; i < board.length; i++){
+      for (int j = 0; j < board.length; j++){
+        s += board[i][j];
+      }
+      s += "\n";
+    }
+    return s;
   }
 
 }
