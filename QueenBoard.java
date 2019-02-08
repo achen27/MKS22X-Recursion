@@ -126,11 +126,14 @@ public class QueenBoard{
     for (int i = 0; i < board.length; i++){
       if (board[r+i][c] == 0) {
         addQueen(r,c);
-        return solveHelp(0,c+1);
+        queenR = r;
+        queenC = c;
+        return solveHelp(0,c+1, queenR, queenC);
       }
+      return solveHelp(r+1, c, queenR, queenC);
     }
     removeQueen(queenR, queenC);
-    return solveHelp(r+1,c-1);
+    return solveHelp(r+1,c-1, queenR, queenC);
   }
 
   public static void main(String[] args){
