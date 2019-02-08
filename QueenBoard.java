@@ -32,6 +32,27 @@ public class QueenBoard{
     }
   }
 
+  public boolean removeQueen(int r, int c){
+    if (board[r][c] != -1){
+      return false;
+    } else {
+      //horizontal Xs
+      for (int i = c; i < board.length; i++){
+        board[r][i]--;
+      }
+      //diagonal up
+      for (int i = 0; r-i >= 0 && c+i < board.length; i++){
+        board[r-i][c+i]--;
+      }
+      //diagonal down
+      for (int i = 0; r+i < board.length && c+i < board.length; i++){
+        board[r+i][c+i]--;
+      }
+      board[r][c] = 0;
+      return true;
+    }
+  }
+
   //prints out numbers
   public String debugString(){
     String s = "";
