@@ -11,13 +11,12 @@ public class QueenBoard{
     }
   }
 
-  private boolean addQueen(int r, int c){
+  public boolean addQueen(int r, int c){
     if (board[r][c] != 0){
       return false;
     } else {
-      board[r][c] = -1;
       //horizontal Xs
-      for (int i = c+1; i < board.length; i++){
+      for (int i = c; i < board.length; i++){
         board[r][i]++;
       }
       //diagonal up
@@ -25,18 +24,20 @@ public class QueenBoard{
         board[r-i][c+i]++;
       }
       //diagonal down
-      for (int i = 0; i < r+1; i++){
+      /*for (int i = 0; i < r+1; i++){
         board[r+i][c+i]++;
-      }
+      }*/
+      board[r][c] = -1;
       return true;
     }
   }
 
+  //prints out numbers
   public String debugString(){
     String s = "";
     for (int i = 0; i < board.length; i++){
       for (int j = 0; j < board.length; j++){
-        s += board[i][j];
+        s += board[i][j] + " ";
       }
       s += "\n";
     }
