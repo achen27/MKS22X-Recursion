@@ -117,13 +117,14 @@ public class QueenBoard{
     if (c >= board.length){
       return true;
     }
-    if (r >= board.length){
+    if (c == 0 && r >= board.length){
       return false;
     }
     for (int i = 0; board[r+i][c] == 0; i++){
       addQueen(r+1,c);
       return solveHelp(r,c+1);
     }
+    return solveHelp(r+1,c-1);
   }
 
   public static void main(String[] args){
