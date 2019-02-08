@@ -54,7 +54,7 @@ public class QueenBoard{
   }
 
   //prints out numbers
-  private String debugString(){
+  public String debugString(){
     String s = "";
     for (int i = 0; i < board.length; i++){
       for (int j = 0; j < board.length; j++){
@@ -110,24 +110,26 @@ public class QueenBoard{
       }
     }
 
-    return solveHelp(0,0);
+    return solveHelp(0,0,0,0);
   }
 
-  private boolean solveHelp(int r, int c){
+  private boolean solveHelp(int r, int c, int queenR, int queenC){
     if (c >= board.length){
       return true;
     }
     if (c == 0 && r >= board.length){
       return false;
     }
-    System.out.println("r: "+r);
-    System.out.println("c: "+c);
+    System.out.println(debugString());
+    System.out.print("("+r+", "+c+")");
+    System.out.println();
     for (int i = 0; i < board.length; i++){
       if (board[r+i][c] == 0) {
-        addQueen(r+1,c);
+        addQueen(r,c);
+        return solveHelp(0,c+1);
       }
-      return solveHelp(r,c+1);
     }
+    removeQueen(queenR, queenC);
     return solveHelp(r+1,c-1);
   }
 
