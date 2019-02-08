@@ -58,7 +58,11 @@ public class QueenBoard{
     String s = "";
     for (int i = 0; i < board.length; i++){
       for (int j = 0; j < board.length; j++){
-        s += board[i][j] + " ";
+        if (board[i][j] == -1){
+          s += board[i][j] + " ";
+        } else {
+          s += " " + board[i][j] + " ";
+        }
       }
       s += "\n";
     }
