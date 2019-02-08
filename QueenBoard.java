@@ -120,6 +120,10 @@ public class QueenBoard{
     if (r >= board.length){
       return false;
     }
+    for (int i = 0; board[r+i][c] == 0; i++){
+      addQueen(r+1,c);
+      return solveHelp(r,c+1);
+    }
   }
 
   public static void main(String[] args){
