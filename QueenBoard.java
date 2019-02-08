@@ -109,6 +109,12 @@ public class QueenBoard{
         }
       }
     }
+
+    return solveHelp(0,0);
+  }
+
+  private boolean solveHelp(int r, int c){
+    
   }
 
   public static void main(String[] args){
